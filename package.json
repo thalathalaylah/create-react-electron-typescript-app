@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "package": "yarn build && electron-packager . my-app --platform=all --arch=x64 --prune --out=release --overwrite"
+    "package": "yarn build && electron-packager . my-app --platform=darwin --arch=x64 --prune --out=release --overwrite",
+    "package-all": "yarn build && electron-packager . my-app --platform=all --arch=x64 --prune --out=release --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"
