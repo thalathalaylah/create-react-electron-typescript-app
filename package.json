@@ -38,9 +38,11 @@
     ]
   },
   "devDependencies": {
+    "@types/uuid": "^3.4.4",
     "electron": "^5.0.3",
     "electron-packager": "^13.1.1",
-    "foreman": "^3.0.1"
+    "foreman": "^3.0.1",
+    "uuid": "^3.3.2"
   },
   "main": "src_main/entrypoint.js",
   "homepage": "./"
