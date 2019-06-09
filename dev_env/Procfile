@@ -1,0 +1,2 @@
+react: yarn start
+electron: node dev_env/electron-wait-react.js

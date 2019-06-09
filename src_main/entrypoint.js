@@ -22,7 +22,7 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
       })
-    : 'http://localhost:3000';
+    : process.env.ELECTRON_START_URL;
   mainWindow.loadURL(startUrl);
 
   // Open the DevTools.

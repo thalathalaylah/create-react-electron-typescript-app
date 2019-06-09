@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "package": "yarn build && electron-packager . my-app --platform=darwin --arch=x64 --prune --out=release --overwrite",
-    "package-all": "yarn build && electron-packager . my-app --platform=all --arch=x64 --prune --out=release --overwrite"
+    "package-all": "yarn build && electron-packager . my-app --platform=all --arch=x64 --prune --out=release --overwrite",
+    "dev": "nf start -j dev_env/Procfile"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,7 +39,8 @@
   },
   "devDependencies": {
     "electron": "^5.0.3",
-    "electron-packager": "^13.1.1"
+    "electron-packager": "^13.1.1",
+    "foreman": "^3.0.1"
   },
   "main": "src_main/entrypoint.js",
   "homepage": "./"
