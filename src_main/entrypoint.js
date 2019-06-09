@@ -2,6 +2,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
+const os = require('os');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -10,19 +11,27 @@ let mainWindow;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1920,
+    height: 1080,
     webPreferences: {}
   });
 
   // and load the index.html of the app.
-  const startUrl = app.isPackaged
-    ? url.format({
-        pathname: path.join(__dirname, '/../build/index.html'),
-        protocol: 'file:',
-        slashes: true
-      })
-    : process.env.ELECTRON_START_URL;
+  let startUrl = url.format({
+    pathname: path.join(__dirname, '/../build/index.html'),
+    protocol: 'file:',
+    slashes: true
+  });
+
+  // settings for develop environment.
+  if (!app.isPackaged) {
+    startUrl = process.env.ELECTRON_START_URL;
+    BrowserWindow.addDevToolsExtension(
+      path.join(os.homedir(), process.env.ELECTRON_DEV_TOOLS_PATH)
+    );
+    mainWindow.webContents.openDevTools();
+  }
+
   mainWindow.loadURL(startUrl);
 
   // Open the DevTools.

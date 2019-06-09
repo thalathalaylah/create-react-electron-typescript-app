@@ -20,7 +20,7 @@
     "electron": "electron .",
     "package": "yarn build && electron-packager . my-app --platform=darwin --arch=x64 --prune --out=release --overwrite",
     "package-all": "yarn build && electron-packager . my-app --platform=all --arch=x64 --prune --out=release --overwrite",
-    "dev": "nf start -j dev_env/Procfile"
+    "dev": "nf start -j dev_env/Procfile -e dev_env/.dotenv"
   },
   "eslintConfig": {
     "extends": "react-app"
