@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { CreateFileButton } from './CreateFileButton';
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -18,9 +20,10 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <CreateFileButton />
       </header>
     </div>
   );
-}
+};
 
 export default App;
